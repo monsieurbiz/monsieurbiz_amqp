@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * This file is part of the MonsieurBiz/Amqp package.
+ *
+ * (c) Monsieur Biz <hello@monsieurbiz.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="MonsieurBiz_Amqp" setup_version="1.0.0">
+    </module>
+</config>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * This file is part of the MonsieurBiz/Amqp package.
+ *
+ * (c) Monsieur Biz <hello@monsieurbiz.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\Console\CommandList">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="MonsieurBizAmqpCreateExchange" xsi:type="object">MonsieurBiz\Amqp\Console\Command\CreateExchangeCommand</item>
+                <item name="MonsieurBizAmqpSampleConsumer" xsi:type="object">MonsieurBiz\Amqp\Console\Command\SampleConsumerCommand</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,21 @@
+{
+    "name": "monsieurbiz/amqp",
+    "description": "N/A",
+    "type": "magento2-module",
+    "license": [
+        "proprietary"
+    ],
+    "require": {
+        "php": "~5.6.0|~7.0.0",
+        "magento/framework": "100.0.*|100.1.*",
+        "php-amqplib/php-amqplib": "^2.6"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MonsieurBiz\\Amqp\\": ""
+        }
+    }
+}

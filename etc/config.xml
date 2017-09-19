@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * This file is part of the MonsieurBiz/Amqp package.
+ *
+ * (c) Monsieur Biz <hello@monsieurbiz.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <monsieurbiz_amqp>
+            <broker>
+                <host>rabbitmq</host>
+                <port>5672</port>
+                <user>guest</user>
+                <pass>guest</pass>
+                <vhost>/</vhost>
+            </broker>
+        </monsieurbiz_amqp>
+    </default>
+</config>
