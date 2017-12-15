@@ -1,12 +1,10 @@
 {
     "name": "monsieurbiz/amqp",
-    "description": "N/A",
+    "description": "Use the power of RabbitMQ in your e-commerce.",
     "type": "magento2-module",
-    "license": [
-        "proprietary"
-    ],
+    "license": "MIT",
     "require": {
-        "php": "~5.6.0|~7.0.0",
+        "php": "~7.0.0",
         "magento/framework": "100.0.*|100.1.*",
         "php-amqplib/php-amqplib": "^2.6"
     },

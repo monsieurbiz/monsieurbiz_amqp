@@ -1,5 +1,9 @@
 # MonsieurBiz AMQP
 
+## Installation
+
+With [composer](https://getcomposer.org/): `composer require monsieurbiz/amqp`.
+
 ## Create an exchange
 
 ```
@@ -66,20 +70,20 @@ Before sending a batch, you should be aware on how RPC works.
 Don't forget to keep the correlation identifier of every request you make.
 
 ```php
-    $c1 = $rpc->request('consume-me', ['my first message']);
-    $c2 = $rpc->request('consume-me', ['my second message']);
+$c1 = $rpc->request('consume-me', ['my first message']);
+$c2 = $rpc->request('consume-me', ['my second message']);
 
-    $responses = $rpc->getResponses();
+$responses = $rpc->getResponses();
 
-    var_dump($responses[$c1]); // string(20) "["my first message"]"
-    var_dump($responses[$c2]); // string(21) "["my second message"]"
+var_dump($responses[$c1]); // string(20) "["my first message"]"
+var_dump($responses[$c2]); // string(21) "["my second message"]"
 ```
 
 More you have consumers running faster you'll get the responses.
 
 ## LICENSE
 
-(c) Monsieur Biz <hello@monsieurbiz.com>
+(c) Monsieur Biz <opensource@monsieurbiz.com>
 
 For the full copyright and license information, please view the LICENSE
 file that was distributed with this source code.
