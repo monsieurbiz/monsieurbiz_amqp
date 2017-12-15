@@ -1,8 +1,12 @@
 # MonsieurBiz AMQP
 
+Use the power of RabbitMQ in your e-commerce running with Magento 2.
+
 ## Installation
 
 With [composer](https://getcomposer.org/): `composer require monsieurbiz/amqp`.
+
+If you want to use delayed messages then you'll have to install the [Delayed Message Plugin][https://github.com/rabbitmq/rabbitmq-delayed-message-exchange] on your RabbitMQ instance.
 
 ## Create an exchange
 
@@ -11,6 +15,17 @@ magento monsieurbiz:amqp:exchange:create consume-me
 ```
 
 With `consume-me` as exchange name.
+
+You can also use a delayed exchange:
+
+```
+magento monsieurbiz:amqp:exchange:create --delayed consume-me
+```
+
+You can create multiple exchange at once:
+```
+magento monsieurbiz:amqp:exchange:create first-exchange-name second-exchange-name
+```
 
 ## Consume a queue
 
@@ -33,6 +48,8 @@ $amqp->sendMessage(
 ```
 
 ### Delayed message
+
+You need to install the [Delayed Message Plugin](https://github.com/rabbitmq/rabbitmq-delayed-message-exchange) on your RabbitMQ instance.
 
 ```php
 $amqp->sendMessage(

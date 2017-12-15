@@ -43,6 +43,7 @@ class CreateExchangeCommand extends Command
         $this->setName('monsieurbiz:amqp:exchange:create');
         $this->setDescription('Create exchange in AMQP');
         $this->addArgument('name', InputArgument::IS_ARRAY, 'Name of the exchange');
+        $this->addOption('delayed', null, InputOption::VALUE_NONE, 'Create x-delayed-type exchange');
     }
 
     /**
@@ -55,7 +56,7 @@ class CreateExchangeCommand extends Command
         $names = $input->getArgument('name');
 
         foreach ($names as $name) {
-            $this->amqp->createExchange($name);
+            $this->amqp->createExchange($name, $input->hasOption('delayed'));
             $output->writeln(sprintf('Exchange <comment>%s</comment> created.', $name));
         }
 

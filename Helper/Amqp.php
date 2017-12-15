@@ -38,14 +38,20 @@ class Amqp extends AbstractHelper
 
     /**
      * @param string $name Exchange's name
+     * @param bool $delayed
      */
-    public function createExchange(string $name)
+    public function createExchange(string $name, bool $delayed = false)
     {
         $connection = $this->getConnection();
         $channel = $connection->channel();
-        $channel->exchange_declare($name, 'x-delayed-message', false, true, false, false, false, [
-            'x-delayed-type' => ['S', 'direct'],
-        ]);
+        if ($delayed) {
+            $channel->exchange_declare(
+                $name, 'x-delayed-message', false, true, false, false, false, [
+                'x-delayed-type' => ['S', 'direct'],
+            ]);
+        } else {
+            $channel->exchange_declare($name, 'direct', false, true, false, false, false, []);
+        }
         $channel->queue_declare($queueName = $name, false, true, false, false);
         $channel->queue_bind($queueName, $name);
     }
