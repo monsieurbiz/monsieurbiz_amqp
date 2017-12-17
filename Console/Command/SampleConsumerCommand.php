@@ -33,6 +33,8 @@ class SampleConsumerCommand extends ConsumerCommandAbstract
      * @param InputInterface $input
      * @param OutputInterface $output
      * @param AMQPMessage $message
+     *
+     * @throws \Exception
      */
     public function callback(InputInterface $input, OutputInterface $output, AMQPMessage $message)
     {
